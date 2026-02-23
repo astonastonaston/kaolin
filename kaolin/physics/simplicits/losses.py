@@ -80,6 +80,8 @@ def loss_elastic(model, pts, yms, prs, rhos, transforms, appx_vol, interp_step, 
         lams = (1 - interp_step) * lams_min + interp_step * lams
 
     # ramps up from 100% linear elasticity to 100% neohookean elasticity
+    # let the deformatio gradient (deformation difference) for each point satisfy material stiffness requirements (as weights in the loss of weights sums) for stability 
+    # (i.e. avoid inverted elements) by using linear elasticity at the start of training, then gradually transition to neohookean elasticity
     lin_elastic = (1 - interp_step) * \
         linear_elastic_material._linear_elastic_energy(mus, lams, pt_wise_Fs)
     if elasticity_type == "neohookean":

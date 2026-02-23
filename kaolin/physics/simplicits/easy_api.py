@@ -175,7 +175,7 @@ class SimplicitsObject:
         training_rhos = rhos.unsqueeze(-1)
 
         ######### Train the model #########
-        model = SimplicitsMLP(3, 64, num_handles, model_layers)
+        model = SimplicitsMLP(3, 64, num_handles, model_layers) # input 3-dim vertex, output 5-dim handles
         model.to(device)
 
         optimizer = torch.optim.Adam(model.parameters(), training_lr_start)

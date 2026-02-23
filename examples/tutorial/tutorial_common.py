@@ -31,5 +31,6 @@ COMMON_DATA_DIR = os.path.realpath(os.path.join(FILE_DIR, os.pardir, os.pardir, 
 # Folder with data specific to examples (<kaolin_root>/examples/samples)
 EXAMPLES_DATA_DIR = os.path.realpath(os.path.join(FILE_DIR, os.pardir, 'samples'))
 
-
+print('COMMON_DATA_DIR: {}'.format(COMMON_DATA_DIR))
+print('EXAMPLES_DATA_DIR: {}'.format(EXAMPLES_DATA_DIR))
 

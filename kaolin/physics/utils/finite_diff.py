@@ -39,7 +39,7 @@ def finite_diff_jac(fcn, x, eps=1e-7):
         x - h[0], x - h[1], x - h[2]
     ], dim=0)
 
-    jacobian = fcn(finite_diff_bounds)
+    jacobian = fcn(finite_diff_bounds) # evaluate finite diff points through deformation fcn, shape (num_pts*6, A_1, ..., A_n)
     jacobian = jacobian.reshape(2, 3, -1, *jacobian.shape[1:])
     jacobian = (jacobian[0] - jacobian[1]) / (2 * delta)
     # Move dim0 to the end, i.e: permute(1, 2, 3, 4, 0)
