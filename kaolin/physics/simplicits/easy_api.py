@@ -1334,7 +1334,8 @@ class SimplicitsScene:
         wp_delta_dz = self._displacement_delta(wp_z, wp_z_prev, wp_z_dot, dt)
         pe_sum, ke = self._assemble_energies(wp_z, wp_delta_dz)
 
-        wp_newton_energy = ke + dt*dt * pe_sum
+        wp_newton_energy = dt*dt * pe_sum
+        # wp_newton_energy = ke + dt*dt * pe_sum
         return wp_newton_energy
 
     def _newton_G(self, wp_z, wp_z_prev, wp_z_dot, wp_B, wp_BMB, dt, wp_dFdz, defo_grad_gradients=None, pt_wise_gradients=None):  # pragma: no cover
@@ -1498,6 +1499,5 @@ class SimplicitsScene:
 
         self.sim_z_dot = wp.from_torch(
             (wp.to_torch(self.sim_z) - wp.to_torch(self.sim_z_prev)) / self.timestep)
-
 
         self.current_sim_step += 1
