@@ -51,3 +51,7 @@ kaolin/physics/simplicits/output/
 kaolin/physics/sparsified/
 output/
 assets/fiscus.ply
+
+runs_compare/
+*_logs/
+

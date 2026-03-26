@@ -121,8 +121,9 @@ def newtons_method(x,
                    cg_iters=100,
                    conv_tol=1e-4,
                    direct_solve=False):
-    r""" Newton's method optimizes for the updated dofs at the next time step. At each iteration, it computes the updated direction `dz`, 
-    finds an appropriate step size, and updates the dofs. It continues to do this iteratively until the directional update is small which indicates the energy is minimized.
+    r""" Newton's method optimizes for the updated dofs at the next time step. At each iteration, it 
+    computes the updated direction `dz`, finds an appropriate step size, and updates the dofs. 
+    It continues to do this iteratively until the directional update is small which indicates the energy is minimized.
 
     Args:
         x (wp.array): Initial guess of size :math:`(\text{num_dofs},)`
