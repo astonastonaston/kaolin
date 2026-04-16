@@ -43,7 +43,8 @@ STL_DIR = "/home/nan/Desktop/datasets/dvrk_meshes"
 # Cadière Forceps — a laparoscopic tissue grasper (jhu-dvrk/dvrk_model).
 # Pre-assembled from URDF visual transforms: wrist body + shaft + two mirrored jaw pieces.
 # Built by build_caudier_grasper.py; load as a single GLB instead of per-STL.
-GRIPPER_GLB = "/home/nan/Desktop/datasets/dvrk_meshes/caudier_grasper.glb"
+GRIPPER_GLB = "/home/nan/Desktop/datasets/dvrk_meshes/caudier_from_urdf.glb"
+# GRIPPER_GLB = "/home/nan/Desktop/datasets/dvrk_meshes/caudier_grasper.glb"
 # Fallback STL list (used only if GRIPPER_GLB is missing)
 TIP_STL_FILES = [
     "caudier_jaw1.stl",
